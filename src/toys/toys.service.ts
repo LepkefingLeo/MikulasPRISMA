@@ -40,7 +40,7 @@ export class ToysService {
     return await this.db.toys.delete({
       where: {
         id
-      }
+      },
     });
   }
 }

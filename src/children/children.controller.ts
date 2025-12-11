@@ -17,6 +17,11 @@ export class ChildrenController {
     return this.childrenService.addToyToChildren(+childId, +toyId);
   }
 
+  @Delete(':childId/toys/:toyId')
+  removeToyFromChild(@Param('childId') childId: string, @Param('toyId') toyId: string) {
+    return this.childrenService.removeToyFromChild(+childId, +toyId);
+  }
+
   @Get()
   findAll() {
     return this.childrenService.findAll();

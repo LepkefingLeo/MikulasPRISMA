@@ -18,6 +18,15 @@ export class ChildrenService {
       }
     });
   }
+  
+  async removeToyFromChild(childId: number, toyId: number) {
+    return await this.db.connection.deleteMany({
+      where: {
+        childId,
+        toyId,
+      },
+    });
+  }
 
   async update(id: number, updateChildDto: UpdateChildDto) {
     return await this.db.children.update({
@@ -49,8 +58,8 @@ export class ChildrenService {
   async remove(id: number) {
     return await this.db.children.delete({
       where: {
-        id
-      }
+        id,
+      },
     });
   }
 }

@@ -37,6 +37,6 @@ model connection {
   childId Int
   toyId   Int
 
-  toy   toys     @relation(fields: [toyId], references: [id])
-  child children @relation(fields: [childId], references: [id])
+  toy   toys     @relation(fields: [toyId], references: [id], onDelete: Cascade)
+  child children @relation(fields: [childId], references: [id], onDelete: Cascade)
 }
